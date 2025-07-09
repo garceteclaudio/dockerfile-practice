@@ -1,0 +1,9 @@
+docker pull mysql:latest
+
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=12345 -p 3306:3306 -d mysql:latest
+
+docker run --name mysql-container \
+  -e MYSQL_ROOT_PASSWORD=tu_contraseña \
+  -p 3306:3306 \
+  -v /ruta/en/tu/host:/var/lib/mysql \  # ← Aquí defines la persistencia
+  -d mysql:latest
